@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.br.GamblingGuru.entities.Cliente;
 
 @Repository
-public interface ClienteRepository extends JpaRepository<Cliente, Integer>{
+public interface ClienteRepository extends JpaRepository<Cliente, String>{
 
     Optional<Cliente> findByEmail(String email);
 

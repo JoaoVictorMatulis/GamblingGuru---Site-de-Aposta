@@ -19,9 +19,6 @@ public class HistoricoJogos implements Serializable {
     @Column(name = "Id")
     long id;
 
-    @Column(name = "NumeroJogo")
-    long num;
-
     @Column(name = "TipoAposta")
     String tipo_aposta;
 

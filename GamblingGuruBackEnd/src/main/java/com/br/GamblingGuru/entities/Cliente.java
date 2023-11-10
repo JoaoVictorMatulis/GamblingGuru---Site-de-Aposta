@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import jakarta.persistence.*;
 
-//insert into cliente(EMAIL, DATA_NASCIMENTO, NOME, SENHA , TELEFONE, SALDO) values('teste@gmail.com','2015-12-17', 'teste', 'senha123', '(43) 3945-8799', 2300.30)
+//insert into cliente(EMAIL, DATA_NASCIMENTO, NOME, SENHA , TELEFONE, pontos) values('teste@gmail.com','2015-12-17', 'teste', 'senha123', '(43) 3945-8799', 2300.30)
 
 @Entity(name = "Cliente")
 public class Cliente implements Serializable {
@@ -26,19 +26,70 @@ public class Cliente implements Serializable {
     @Column(nullable = false, name = "Senha")
     String senha;
 
-    @Column(name = "Saldo")
-    double saldo;
+    @Column(name = "pontos")
+    int pontos = 10000;
+
+    @Column(name = "Jogos")
+    int jogos = 0;
+
+    @Column(name = "Admin")
+    boolean admin = false;
 
     public Cliente() {
     }
 
-    public Cliente(String email, String nome, Date dataNascimento, String telefone, String senha, double saldo) {
+    public Cliente(String email, String nome, Date dataNascimento, String telefone, String senha, int pontos) {
         this.email = email;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.telefone = telefone;
         this.senha = senha;
-        this.saldo = saldo;
+        this.pontos = pontos;
+    }
+
+    public Cliente(String email, String nome, Date dataNascimento, String telefone, String senha) {
+        this.email = email;
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.senha = senha;
+        this.telefone = telefone;
+    }
+
+    public Cliente(String email, String nome, Date dataNascimento, String senha, int pontos) {
+        this.email = email;
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.senha = senha;
+        this.pontos = pontos;
+    }
+
+    public Cliente(String email, String nome, Date dataNascimento, String telefone, String senha, int pontos,
+            boolean admin) {
+        this.email = email;
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.senha = senha;
+        this.telefone = telefone;
+        this.pontos = pontos;
+        this.admin = admin;
+    }
+
+    public Cliente(String email, String nome, Date dataNascimento, String senha, int pontos, boolean admin) {
+        this.email = email;
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.senha = senha;
+        this.pontos = pontos;
+        this.admin = admin;
+    }
+
+    public Cliente(String email, String nome, Date dataNascimento, String telefone, String senha, boolean admin) {
+        this.email = email;
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.senha = senha;
+        this.telefone = telefone;
+        this.admin = admin;
     }
 
     public static long getSerialversionuid() {
@@ -85,18 +136,33 @@ public class Cliente implements Serializable {
         this.senha = senha;
     }
 
-    public double getSaldo() {
-        return saldo;
+    public int getPontos() {
+        return pontos;
     }
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
+    public void setPontos(int pontos) {
+        this.pontos = pontos;
+    }
+
+    public int getJogos() {
+        return jogos;
+    }
+
+    public void setJogos(int jogos) {
+        this.jogos = jogos;
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 
     @Override
     public String toString() {
         return "Cliente [email=" + email + ", nome=" + nome + ", dataNascimento=" + dataNascimento + ", telefone="
-                + telefone + ", senha=" + senha + ", saldo=" + saldo + "]";
+                + telefone + ", senha=" + senha + ", pontos=" + pontos + ", jogos=" + jogos + ", admin=" + admin + "]";
     }
-
 }
