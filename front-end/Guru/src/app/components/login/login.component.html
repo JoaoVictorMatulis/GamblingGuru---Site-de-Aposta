@@ -1,0 +1,11 @@
+<main>
+    <div id="div-main">
+        <div class="Login">
+            <label for="email">E-mail: *</label><br>
+            <input type="text" id="email" name="email" value={{email}} (keyup)="setEmail($event)" required><br>
+            <label for="senha">Senha: *</label><br>
+            <input type="password" id="senha" name="senha" value={{senha}} (keyup)="setSenha($event)" required>
+            <button (click)="(validarLogin())">Logar</button>
+        </div>
+    </div>
+</main>

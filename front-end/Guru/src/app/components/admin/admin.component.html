@@ -1,0 +1,53 @@
+<main>
+    <div id="div-main">
+        <div class="Admin">
+            <h1>CONTROLE DE USUARIOS</h1>
+            <div class="top">
+                <label for="id">Procurar por Email: </label>
+                <input class="caixa" type="text" id="id" name="id" value={{emailCliente}} (keyup)="setEmail($event)" size="45" maxlength="45">
+                <button (click)="(findCliente(emailCliente))">BUSCAR</button>
+            </div>
+            <div id="div-table">
+                <table>
+                    <tr>
+                        <th>Email</th>
+                        <th>Nome</th>
+                        <th>Pontos Totais</th>
+                        <th>Jogos</th>
+                        <th>Telefone</th>
+                        <th>Admin?</th>
+                        <th>Alteração</th>
+                        <th>Exclusão</th>
+                    </tr>
+                    <tr *ngFor="let item of list; index as i">
+                        <td>{{item.email}}</td>
+                        <td>{{item.nome}}</td>
+                        <td>{{item.pontos}}</td>
+                        <td>{{item.jogos}}</td>
+                        <td>{{item.telefone}}</td>
+                        <td>{{item.admin}}</td>
+                        <td><button (click)="editar(item.email, item.admin, item.pontos)">Alterar</button></td>
+                        <td><button (click)="excluir(item.email)">Excluir</button></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="mid">
+                <div>
+                    <label for="usuario">Email do usuário:<label style="color: black;">{{clientePesquisa.email}}</label></label><br>
+                </div>
+                <div>
+                    <label for="checkbox">Ativar Administrador para esse usuario?</label>
+                    <input id="checkbox" type="checkbox" [checked]="clientePesquisa.admin" (click)="setAdmin($event)"><br>
+                </div>
+                <div>
+                    <label for="pontos">PONTOS:</label>
+                    <input class= "pontos" type="number" id="pontos" name="pontos" value={{clientePesquisa.pontos}} (keyup)="setPontos($event)"><br>
+                </div>
+                <div>
+                    <button (click)="alterar(clientePesquisa.email, clientePesquisa)" class="editar"> editar </button>
+                    <button (click)="excluir(clientePesquisa.email)" class="excluir"> excluir </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,176 @@
+<mat-toolbar class = "header">
+    <div id="cabecalho-itens">
+        <img id="logo" src="../../../assets/imagens/LOGO.png" alt="GamblingGuru">
+        <div>
+            <a (click)="(leaderBoard())">LEADERBOARD</a>
+            <div>Saldo: {{this.cliente.pontos}}</div>
+            <div>Usuário: {{this.cliente.nome}}</div>
+            <a routerLink = "">Sair da Conta</a>
+        </div>
+    </div>
+</mat-toolbar>
+<div id="main">
+    <div id="div-main">
+        <img [ngStyle]="{ 'transform': 'rotate(' + rotacao + 'deg)' }" id="roleta" src="../../../assets/imagens/ROLETA.png" alt="Roleta"/>
+        <img id="seta" src="../../../assets/imagens/seta.png" alt="Seta">
+        <div id="tabela">
+            <img id="apostaCasa" src="../../../assets/imagens/apostaCasa.png"  alt="">
+            <!-- <img class="fichas" id="ficha1" src="../../../assets/imagens/ficha1preto.png" alt="">
+            <img class="fichas" id="ficha5" src="../../../assets/imagens/ficha5preto.png" alt="">
+            <img class="fichas" id="ficha10" src="../../../assets/imagens/ficha10preto.png" alt="">
+            <img class="fichas" id="ficha25" src="../../../assets/imagens/ficha25preto.png" alt="">
+            <img class="fichas" id="ficha50" src="../../../assets/imagens/ficha50preto.png" alt="">
+            <img class="fichas" id="ficha100" src="../../../assets/imagens/ficha100preto.png" alt="">
+            <img class="fichas" id="ficha500" src="../../../assets/imagens/ficha500preto.png" alt="">
+            <img class="fichas" id="ficha1000" src="../../../assets/imagens/ficha1000.png" alt=""> -->
+            <div id="Q1">
+                <button (click) = "setAposta('1 até 18')" id="1ate18">
+                    1 até 18
+                </button>
+                <button (click) = "setAposta('Impar')" id="impar">
+                    IMPAR
+                </button>
+                <button (click) = "setAposta('Preto')" id="preto">
+                    Preto
+                </button>
+                <button (click) = "setAposta('Vermelho')" id="vermelho">
+                    Vermelho
+                </button>
+                <button (click) = "setAposta('Par')" id="par">
+                    PAR
+                </button>
+                <button (click) = "setAposta('19 até 36')" id="19ate36">
+                    19 até 36
+                </button>
+            </div>
+            <div id="Q2">
+                <button (click) = "setAposta('1º12')" id="primeiro">
+                    1º12
+                </button>
+                <button (click) = "setAposta('2º12')" id="segundo">
+                    2º12
+                </button>
+                <button (click) = "setAposta('3º12')" id="terceiro">
+                    3º12
+                </button>
+            </div>
+            <div id="Q3">
+                <button (click) = "setAposta(1)" class="vermelho" id="1">
+                    1
+                </button>
+                <button (click) = "setAposta(2)" class="preto" id="2">
+                    2
+                </button>
+                <button (click) = "setAposta(3)" class="vermelho" id="3">
+                    3
+                </button>
+                <button (click) = "setAposta(4)" class="preto" id="4">
+                    4
+                </button>
+                <button (click) = "setAposta(5)" class="vermelho" id="5">
+                    5
+                </button>
+                <button (click) = "setAposta(6)" class="preto" id="6">
+                    6
+                </button>
+                <button (click) = "setAposta(7)"class="vermelho" id="7">
+                    7
+                </button>
+                <button (click) = "setAposta(8)" class="preto" id="8">
+                    8
+                </button>
+                <button (click) = "setAposta(9)" class="vermelho" id="9">
+                    9
+                </button>
+                <button (click) = "setAposta(10)" class="preto" id="10">
+                    10
+                </button>
+                <button (click) = "setAposta(11)" class="preto" id="11">
+                    11
+                </button>
+                <button (click) = "setAposta(12)" class="vermelho" id="12">
+                    12
+                </button>
+                <button (click) = "setAposta(13)" class="preto" id="13">
+                    13
+                </button>
+                <button (click) = "setAposta(14)" class="vermelho" id="14">
+                    14
+                </button>
+                <button (click) = "setAposta(15)" class="preto" id="15">
+                    15
+                </button>
+                <button (click) = "setAposta(16)" class="vermelho" id="16">
+                    16
+                </button>
+                <button (click) = "setAposta(17)" class="preto" id="17">
+                    17
+                </button>
+                <button (click) = "setAposta(18)" class="vermelho" id="18">
+                    18
+                </button>
+                <button (click) = "setAposta(19)" class="vermelho" id="19">
+                    19
+                </button>
+                <button (click) = "setAposta(20)" class="preto" id="20">
+                    20
+                </button>
+                <button (click) = "setAposta(21)" class="vermelho" id="21">
+                    21
+                </button>
+                <button (click) = "setAposta(22)" class="preto" id="22">
+                    22
+                </button>
+                <button (click) = "setAposta(23)" class="vermelho" id="23">
+                    23
+                </button>
+                <button (click) = "setAposta(24)" class="preto" id="24">
+                    24
+                </button>
+                <button (click) = "setAposta(25)" class="vermelho" id="25">
+                    25
+                </button>
+                <button (click) = "setAposta(26)" class="preto" id="26">
+                    26
+                </button>
+                <button (click) = "setAposta(27)" class="vermelho" id="27">
+                    27
+                </button>
+                <button (click) = "setAposta(28)" class="preto" id="28">
+                    28
+                </button>
+                <button (click) = "setAposta(29)" class="preto" id="29">
+                    29
+                </button>
+                <button (click) = "setAposta(30)" class="vermelho" id="30">
+                    30
+                </button>
+                <button (click) = "setAposta(31)" class="preto" id="31">
+                    31
+                </button>
+                <button (click) = "setAposta(32)" class="vermelho" id="32">
+                    32
+                </button>
+                <button (click) = "setAposta(33)" class="preto" id="33">
+                    33
+                </button>
+                <button (click) = "setAposta(34)" class="vermelho" id="34">
+                    34
+                </button>
+                <button (click) = "setAposta(35)" class="preto" id="35">
+                    35
+                </button>
+                <button (click) = "setAposta(36)" class="vermelho" id="36">
+                    36
+                </button>
+            </div>
+            <div id = "digitarAposta">
+                <label for="aposta">Tipo da Aposta (Clique na tabela ao lado)</label>
+                <div id="aposta"><label id="aposta">{{tipoAposta}}</label></div>
+                <label for="valor">Valor da Aposta</label>
+                <input id="valor" type="number" name="valor" value={{valorAposta}} (keyup)="setValor($event)">
+            </div>
+            <button (click)="rotate()" id="apostar">Apostar</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<ng-container *ngIf="cliente.admin; else comun">
+    <app-header-leaderboard-admin></app-header-leaderboard-admin>
+    <app-leaderboard></app-leaderboard>
+    <app-footer></app-footer>
+</ng-container>
+<ng-template #comun>
+    <app-header-logado></app-header-logado>
+    <app-leaderboard></app-leaderboard>
+    <app-footer></app-footer>
+</ng-template>

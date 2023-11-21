@@ -1,0 +1,78 @@
+main {
+    max-height: 737px;
+    height: 737px;
+    max-width: 1800px;
+    width: 100%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#div-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#div-table {
+    display: flex;
+    width: 1000px;
+    height: 600px;
+    border: solid 2px black;
+    overflow: scroll;
+    overflow-x: hidden;
+    justify-content: center;
+}
+
+table {
+    margin: 10px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th, td {
+    word-wrap: break-word;
+    width: 200px;
+    border: solid 3px black;
+}
+
+th {
+    background-color: #25901E;
+    color: white;
+}
+
+.preto {
+    background-color: black;
+    color: white;
+}
+
+.vermelho {
+    background-color: #C01A26;
+    color: white;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

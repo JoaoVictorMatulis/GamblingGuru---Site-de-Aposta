@@ -1,0 +1,11 @@
+<mat-toolbar class = "header">
+    <div id="cabecalho-itens">
+        <img id="logo" src="../../../assets/imagens/LOGO.png" alt="GamblingGuru">
+        <div>
+            <a (click)="(leaderBoard())">LEADERBOARD</a>
+            <div>Usuário: {{this.cliente.nome}}</div>
+            <a (click)="(voltar())">Voltar</a>
+            <a routerLink = "">Sair da Conta</a>
+        </div>
+    </div>
+</mat-toolbar>

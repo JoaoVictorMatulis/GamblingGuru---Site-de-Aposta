@@ -1,0 +1,29 @@
+<main>
+    <div id="div-main">
+        <div id="div-table">
+            <table>
+                <tr>
+                    <th>Colocação</th>
+                    <th>Jogador</th>
+                    <th>Pontos Totais</th>
+                    <th>Quantidade de Jogos</th>
+                </tr>
+                <tr *ngFor="let item of list; index as i">
+                    <ng-container *ngIf="i%2 == 0; else impar">
+                        <td class="vermelho" id="colocação">{{i+1}}</td>
+                        <td class="vermelho" id="jogador">{{item.nome}}</td>
+                        <td class="vermelho" id="pontos">{{item.pontos}}</td>
+                        <td class="vermelho" id="quantidadeJogos">{{item.jogos}}</td>
+                    </ng-container>
+                    <ng-template #impar>
+                        <td class="preto" id="colocação">{{i+1}}</td>
+                        <td class="preto" id="jogador">{{item.nome}}</td>
+                        <td class="preto" id="pontos">{{item.pontos}}</td>
+                        <td class="preto" id="quantidadeJogos">{{item.jogos}}</td>
+                    </ng-template>
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</main>
